@@ -120,3 +120,5 @@ LOAD_CLASS({
     */}
   ]
 });
+
+arequire('foam.ui.FoamTagView', GLOBAL.X); // needed for TemplateUtil

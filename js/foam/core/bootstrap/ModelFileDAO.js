@@ -22,13 +22,26 @@ MODEL({
   methods: {  
     find: function (key, sink) {
       var X = this.X;
+      // 1. Model is already avaible in the context
       var model = X.lookup(key);
       if ( model ) {
         sink && sink.put && sink.put(model);
         return;
       }
-      //if (! X.NAME) console.log("MFD X: ", X.NAME, X.$UID, key);
+      
+      // 2. Model is already loaded, but not yet registered in the context
+      if ( GLOBAL.X.LOAD_CLASS$modelFactories && GLOBAL.X.LOAD_CLASS$modelFactories[key] ) {
+        // run the factory with our context, X (not the global one!)
+        GLOBAL.X.LOAD_CLASS$modelFactories[key](X);
+        // lookup should now access the newly registerd model
+        model = X.lookup(key);
+        if ( model ) {
+          sink && sink.put && sink.put(model);
+          return;
+        }        
+      }
 
+      // 3. Load the script file to create the factory
       var sourcePath = window.FOAM_BOOT_DIR + '../js/' + key.replace(/\./g, '/') + '.js';
       
       var tag = X.document.createElement('script');
@@ -36,13 +49,20 @@ MODEL({
       X.document.head.appendChild(tag);
       
       tag.onload = function() {
-        var model = X.lookup(key);
-        if ( ! model ) {
-          console.warn('Model load failed for: ', key);
-          sink && sink.error && sink.error('Model load failed for: ', key);
-          return;
+        // TODO: copy paste cleanup!
+        if ( GLOBAL.X.LOAD_CLASS$modelFactories && GLOBAL.X.LOAD_CLASS$modelFactories[key] ) {
+          // run the factory with our context, X (not the global one!)
+          GLOBAL.X.LOAD_CLASS$modelFactories[key](X);
+          // lookup should now access the newly registerd model
+          var model = X.lookup(key);
+          if ( model ) {
+            sink && sink.put && sink.put(model);
+            return;
+          }        
         }
-        sink && sink.put && sink.put(model);
+        console.warn('Model load failed for: ', key);
+        sink && sink.error && sink.error('Model load failed for: ', key);
+        return;
       }.bind(this.X.document.head);
     },
     

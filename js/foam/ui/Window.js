@@ -167,8 +167,8 @@ LOAD_CLASS({
 
 
 // Using the existence of 'process' to determine that we're running in Node.
-(function() {
-  var w = foam.ui.Window.create(
+arequire('foam.ui.Window')(function(m) {
+  var w = m.create(
     {
       window: window,
       name: 'DEFAULT WINDOW',
@@ -176,4 +176,6 @@ LOAD_CLASS({
     }, X
   );
   FObject.X = X = w.Y;
-})();
+  console.log("FObject.X etc. ", X, GLOBAL.X);
+});
+
