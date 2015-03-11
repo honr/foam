@@ -210,7 +210,7 @@ if ( model.extendsModel ) {
 // CYCLE DEBUG
 var trait = model.traits[i].clone();
 dbgX.arequire$ModelRequiresInProgress[modelName].traits[trait] = true;
-if (trait == 'foam.ui.HTMLViewTrait' && modelName == 'foam.ui.View')arequire(trait, opt_X)(function(m) {
+arequire(trait, opt_X)(function(m) {
   delete dbgX.arequire$ModelRequiresInProgress[modelName].traits[m.id];
 });
 // CYCLE DEBUG
