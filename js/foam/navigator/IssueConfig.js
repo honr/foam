@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'IssueConfig',
   package: 'foam.navigator',
   extendsModel: 'foam.navigator.BrowserConfig',

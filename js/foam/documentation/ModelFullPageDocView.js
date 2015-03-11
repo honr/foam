@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'ModelFullPageDocView',
   package: 'foam.documentation',
   extendsModel: 'foam.documentation.ModelDocView',

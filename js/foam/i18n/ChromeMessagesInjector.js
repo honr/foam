@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'ChromeMessagesInjector',
   package: 'foam.i18n',
   extendsModel: 'foam.i18n.Visitor',

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'WorkerDelegate',
   package: 'foam.core.dao',
   help:  'The client side of a web-worker DAO',

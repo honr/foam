@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'DemoView',
   package: 'foam.ui.polymer.gen',
   extendsModel: 'foam.ui.View',

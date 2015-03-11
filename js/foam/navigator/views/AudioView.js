@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'AudioView',
   package: 'foam.navigator.views',
   extendsModel: 'foam.ui.DetailView',

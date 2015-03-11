@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'ControllerView',
   package: 'foam.ui.polymer.gen',
   extendsModel: 'foam.ui.DetailView',

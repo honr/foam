@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'CitationView',
   package: 'foam.apps.mbug.ui',
   extendsModel: 'foam.ui.md.DefaultRowView',

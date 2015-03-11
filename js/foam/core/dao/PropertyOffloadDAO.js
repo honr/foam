@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'PropertyOffloadDAO',
   package: 'foam.core.dao',
   extendsModel: 'ProxyDAO',

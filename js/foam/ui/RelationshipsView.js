@@ -16,7 +16,7 @@
  */
 
 
-CLASS({
+LOAD_CLASS({
   name: 'RelationshipsView',
   package: 'foam.ui',
   extendsModel: 'foam.ui.DetailView',

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'EMailView',
   package: 'com.google.mail',
   extendsModel: 'foam.ui.UpdateDetailView',

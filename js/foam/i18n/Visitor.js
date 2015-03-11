@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'Visitor',
   package: 'foam.i18n',
   todos: [

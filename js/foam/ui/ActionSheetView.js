@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'ActionSheetView',
   extendsModel: 'foam.ui.View',
   traits: ['foam.ui.layout.PositionedDOMViewTrait'],

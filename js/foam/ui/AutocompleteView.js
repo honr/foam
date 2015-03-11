@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'AutocompleteView',
   extendsModel: 'foam.ui.PopupView',
   help: 'Default autocomplete popup.',

@@ -16,7 +16,7 @@
  */
 
 
-CLASS({
+LOAD_CLASS({
   name: 'Block',
   package: 'foam.graphics.diagram',
   

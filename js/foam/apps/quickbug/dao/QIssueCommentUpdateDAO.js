@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'QIssueCommentUpdateDAO',
   package: 'foam.apps.quickbug.dao',
   help: 'Decorates a comment dao, and on put, updates an associated issue dao.',

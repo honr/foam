@@ -311,6 +311,44 @@ function registerModel(model, opt_name) {
 }
 
 
+function LOAD_CLASS(m) {
+  var _ROOT_X = GLOBAL.X;
+
+  /** Register a factory to register the model when given a context. **/
+  if ( ! _ROOT_X.LOAD_CLASS$modelFactories ) _ROOT_X.LOAD_CLASS$modelFactories = {};
+  
+  var id = m.package ? m.package + '.' + m.name : m.name;
+  _ROOT_X.LOAD_CLASS$modelFactories[id] = function(opt_X) {
+    var X = opt_X || _ROOT_X;
+    var path = packagePath(X, m.package);
+    Object.defineProperty(path, m.name, {
+      get: function () {
+        // console.time('registerModel: ' + id);
+        if ( X.document && X.document.currentScript ) m.sourcePath = X.document.currentScript.src;
+        USED_MODELS[id] = true;
+        delete UNUSED_MODELS[id];
+        Object.defineProperty(path, m.name, {value: null, configurable: true});
+
+        var work = [];
+        // console.time('buildModel: ' + id);
+        var model = JSONUtil.mapToObj(X, m, Model, work);
+        // console.timeEnd('buildModel: ' + id);
+        if ( work.length > 0 && model.required__ )
+          model.required__ = aseq(
+            aseq.apply(null, work),
+            model.required__); 
+        X.registerModel(model);
+
+        // console.timeEnd('registerModel: ' + id);
+        return this[m.name];
+      },
+      configurable: true
+    });
+  }
+
+}
+
+
 function CLASS(m) {
 
   /** Lazily create and register Model first time it's accessed. **/

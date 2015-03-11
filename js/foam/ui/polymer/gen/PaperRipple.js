@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'PaperRipple',
   package: 'foam.ui.polymer.gen',
   extendsModel: 'foam.ui.polymer.gen.View',

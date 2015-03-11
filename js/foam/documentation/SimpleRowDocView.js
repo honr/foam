@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'SimpleRowDocView',
   package: 'foam.documentation',
   extendsModel: 'foam.documentation.RowDocView',

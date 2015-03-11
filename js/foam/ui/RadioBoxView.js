@@ -16,7 +16,7 @@
  */
  
 
-CLASS({
+LOAD_CLASS({
   name: 'RadioBoxView',
   package: 'foam.ui',
 

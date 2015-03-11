@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'TextAreaView',
 
   extendsModel: 'foam.ui.TextFieldView',

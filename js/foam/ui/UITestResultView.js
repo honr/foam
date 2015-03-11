@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'UITestResultView',
   label: 'UI Test Result View',
   help: 'Overrides the inner masterView and liveView for UITests.',

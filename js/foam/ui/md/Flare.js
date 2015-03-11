@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   package: 'foam.ui.md',
   name: 'Flare',
 

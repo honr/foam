@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'Modeller',
   package: 'foam.apps',
   extendsModel: 'foam.ui.View',

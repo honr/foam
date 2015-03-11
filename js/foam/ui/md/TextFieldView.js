@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'TextFieldView',
   package: 'foam.ui.md',
   extendsModel: 'foam.ui.SimpleView',

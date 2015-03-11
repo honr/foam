@@ -16,7 +16,7 @@
  */
 
 
-CLASS({
+LOAD_CLASS({
   name: 'ChainedPrePostPropertyTrait',
   package: 'foam.patterns',
   

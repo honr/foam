@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'RowDocView',
   package: 'foam.documentation',
   extendsModel: 'foam.documentation.DocView',
@@ -26,7 +26,7 @@ CLASS({
     subclass $$DOC{ref:'foam.documentation.RowDocView'}.</p>
     <p>Name your subclass with the name of the type you support:</p>
     <p><code>
-    CLASS({ <br/>
+    LOAD_CLASS({ <br/>
     &nbsp;&nbsp;  name: 'ListenerRowDocView',<br/>
     &nbsp;&nbsp;  extendsModel: 'RowDocView'<br/>
     });<br/>

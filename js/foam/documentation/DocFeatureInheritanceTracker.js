@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'DocFeatureInheritanceTracker',
   package: 'foam.documentation',
   documentation: 'Stores inheritance information for a feature of a Model',

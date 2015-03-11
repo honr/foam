@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'DelayedDAO',
   package: 'foam.core.dao',
   help: "Apply this decorator to a DAO if you'd like to pretend that accesses are slow. Currently, only select has been targetted.",

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'FeatureListDocView',
   package: 'foam.documentation',
   documentation: 'Displays the HTML documentation of the given feature list.',

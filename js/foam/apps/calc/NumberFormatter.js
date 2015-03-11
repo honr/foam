@@ -9,7 +9,7 @@
  *     http://www.apache.org/licenses/LICENSE-2.0
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'NumberFormatter',
   package: 'foam.apps.calc',
   messages: [

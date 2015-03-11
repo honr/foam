@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'LocationProperty',
   package: 'foam.apps.quickbug.types',
 

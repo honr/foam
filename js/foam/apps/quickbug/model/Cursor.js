@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'Cursor',
   package: 'foam.apps.quickbug.model',
 

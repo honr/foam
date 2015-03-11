@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'IssueRestDAO',
   package: 'foam.apps.quickbug.dao',
   extendsModel: 'RestDAO',

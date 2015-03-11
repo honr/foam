@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'DocFeatureCollapsedView',
   package: 'foam.documentation',
   extendsModel: 'foam.documentation.DocBodyView',

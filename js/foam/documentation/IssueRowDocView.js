@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'IssueRowDocView',
   package: 'foam.documentation',
   extendsModel: 'foam.documentation.DocFeatureView',

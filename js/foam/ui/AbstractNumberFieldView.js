@@ -16,7 +16,7 @@
  */
  
  
-CLASS({
+LOAD_CLASS({
   name: 'AbstractNumberFieldView',
   package: 'foam.ui',
 

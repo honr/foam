@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'DefaultObjectDAO',
   package: 'foam.core.dao',
   help: 'A DAO decorator that will generate a default object if no object is found on a .find() call.',
