@@ -176,44 +176,44 @@ function arequireModel(model, param_X) {
 // Run your code, and when it hangs examine the unsatisfied models in
 // X.arequire$ModelRequiresInProgress
 
-// CYCLE DEBUG
-var modelName = model.id.clone();
-var dbgX = X;
-console.log("areqModel ", modelName, "X param: ", param_X && param_X.$UID, " dbgX: ", dbgX.$UID);
-if ( ! dbgX.arequire$ModelRequiresInProgress ) {
-  dbgX.set('arequire$ModelRequiresInProgress', {} );
-}
-if ( ! dbgX.arequire$ModelRequiresInProgress[modelName] ) {
-  dbgX.arequire$ModelRequiresInProgress[modelName] = { uid: model.$UID, extendsModel: "", traits: {}, requires: {} };
-  future.get(function(m) {
-    delete dbgX.arequire$ModelRequiresInProgress[m.id];
-  });
-}
-// CYCLE DEBUG
+// // CYCLE DEBUG
+// var modelName = model.id.clone();
+// var dbgX = X;
+// console.log("areqModel ", modelName, "X param: ", param_X && param_X.$UID, " dbgX: ", dbgX.$UID);
+// if ( ! dbgX.arequire$ModelRequiresInProgress ) {
+//   dbgX.set('arequire$ModelRequiresInProgress', {} );
+// }
+// if ( ! dbgX.arequire$ModelRequiresInProgress[modelName] ) {
+//   dbgX.arequire$ModelRequiresInProgress[modelName] = { uid: model.$UID, extendsModel: "", traits: {}, requires: {} };
+//   future.get(function(m) {
+//     delete dbgX.arequire$ModelRequiresInProgress[m.id];
+//   });
+// }
+// // CYCLE DEBUG
 
     if ( model.extendsModel ) args.push(arequire(model.extendsModel, opt_X));
 
-// CYCLE DEBUG
-if ( model.extendsModel ) {
-  dbgX.arequire$ModelRequiresInProgress[modelName].extendsModel = model.extendsModel;
-  arequire(model.extendsModel, opt_X)(function(m) {
-    dbgX.arequire$ModelRequiresInProgress[modelName].extendsModel = "";
-  });
-}
-// CYCLE DEBUG
+// // CYCLE DEBUG
+// if ( model.extendsModel ) {
+//   dbgX.arequire$ModelRequiresInProgress[modelName].extendsModel = model.extendsModel;
+//   arequire(model.extendsModel, opt_X)(function(m) {
+//     dbgX.arequire$ModelRequiresInProgress[modelName].extendsModel = "";
+//   });
+// }
+// // CYCLE DEBUG
 
     // TODO(kgr): eventually this should just call the arequire() method on the Model
     var i;
     if ( model.traits ) {
       for ( i = 0; i < model.traits.length; i++ ) {
         args.push(arequire(model.traits[i], opt_X));
-// CYCLE DEBUG
-var trait = model.traits[i].clone();
-dbgX.arequire$ModelRequiresInProgress[modelName].traits[trait] = true;
-arequire(trait, opt_X)(function(m) {
-  delete dbgX.arequire$ModelRequiresInProgress[modelName].traits[m.id];
-});
-// CYCLE DEBUG
+// // CYCLE DEBUG
+// var trait = model.traits[i].clone();
+// dbgX.arequire$ModelRequiresInProgress[modelName].traits[trait] = true;
+// arequire(trait, opt_X)(function(m) {
+//   delete dbgX.arequire$ModelRequiresInProgress[modelName].traits[m.id];
+// });
+// // CYCLE DEBUG
       }
     }
     if ( model.templates ) for ( i = 0 ; i < model.templates.length ; i++ ) {
@@ -237,13 +237,13 @@ arequire(trait, opt_X)(function(m) {
           console.warn("Model requires itself: " + model.id);
         } else {
           args.push(arequire(m[0], opt_X));
-// CYCLE DEBUG
-var require = m[0].clone();
-dbgX.arequire$ModelRequiresInProgress[modelName].requires[require] = true;
-arequire(require, opt_X)(function(m) {
-  delete dbgX.arequire$ModelRequiresInProgress[modelName].requires[m.id];
-});
-// CYCLE DEBUG
+// // CYCLE DEBUG
+// var require = m[0].clone();
+// dbgX.arequire$ModelRequiresInProgress[modelName].requires[require] = true;
+// arequire(require, opt_X)(function(m) {
+//   delete dbgX.arequire$ModelRequiresInProgress[modelName].requires[m.id];
+// });
+// // CYCLE DEBUG
         }
       }
     }
