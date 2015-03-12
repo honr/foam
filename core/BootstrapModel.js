@@ -502,7 +502,9 @@ var BootstrapModel = {
     self.definition_.__proto__ = FObject;
   },
 
-  create: function(args, opt_X) { return this.getPrototype().create(args, opt_X); },
+  create: function(args, opt_X) { 
+    return this.getPrototype().create(args, opt_X); 
+  },
 
   isSubModel: function(model) {
     /* Returns true if the given instance extends this $$DOC{ref:'Model'} or a descendant of this. */

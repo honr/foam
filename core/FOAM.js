@@ -329,17 +329,30 @@ function LOAD_CLASS(m) {
         delete UNUSED_MODELS[id];
         Object.defineProperty(path, m.name, {value: null, configurable: true});
 
-        var work = [];
-        // console.time('buildModel: ' + id);
-        if ( _ROOT_X.LOAD_CLASS$modelFactories[id].sourcePath ) { 
-          m.sourcePath = _ROOT_X.LOAD_CLASS$modelFactories[id].sourcePath;
+        // grab the model, only FOAMalize it once globally
+        var model = _ROOT_X.lookup(id);
+        if ( ! model ) {
+          var work = [];
+          // console.time('buildModel: ' + id);
+          if ( _ROOT_X.LOAD_CLASS$modelFactories[id].sourcePath ) { 
+            m.sourcePath = _ROOT_X.LOAD_CLASS$modelFactories[id].sourcePath;
+          }
+          
+          model = JSONUtil.mapToObj(X, m, Model, work);
+          
+          // console.timeEnd('buildModel: ' + id);
+          if ( work.length > 0 && model.required__ )
+            model.required__ = aseq(
+              aseq.apply(null, work),
+              model.required__); 
+            
+          // register at root only once ever, don't onRegisterModel yet since we re-register 
+          // once per context
+          var rootPath = packagePath(_ROOT_X, model.package);
+          Object.defineProperty(rootPath, model.name, { value: model, configurable: true });
         }
-        var model = JSONUtil.mapToObj(X, m, Model, work);
-        // console.timeEnd('buildModel: ' + id);
-        if ( work.length > 0 && model.required__ )
-          model.required__ = aseq(
-            aseq.apply(null, work),
-            model.required__); 
+        
+        // run once per context
         X.registerModel(model);
 
         // console.timeEnd('registerModel: ' + id);
@@ -356,6 +369,7 @@ function LOAD_CLASS(m) {
 
 
 function CLASS(m) {
+  var _ROOT_X = GLOBAL.X;
 
   /** Lazily create and register Model first time it's accessed. **/
   function registerModelLatch(path, m) {
@@ -365,7 +379,7 @@ function CLASS(m) {
 
     // TODO(adamvy): Remove this once we no longer have code depending on models to being in the global scope.
     if ( ! m.package )
-      Object.defineProperty(GLOBAL, m.name, { get: function() { return path[m.name]; }, configurable: true });
+      Object.defineProperty(_ROOT_X, m.name, { get: function() { return path[m.name]; }, configurable: true });
 
     //console.log("Model Getting defined: ", m.name, X.NAME);
     Object.defineProperty(path, m.name, {
@@ -377,7 +391,7 @@ function CLASS(m) {
 
         var work = [];
         // console.time('buildModel: ' + id);
-        var model = JSONUtil.mapToObj(X, m, Model, work);
+        var model = JSONUtil.mapToObj(_ROOT_X, m, _ROOT_X.Model, work);
         // console.timeEnd('buildModel: ' + id);
         if ( work.length > 0 && model.required__ ) {
           model.required__ = aseq(
@@ -385,7 +399,7 @@ function CLASS(m) {
             model.required__);
         }
 
-        X.registerModel(model);
+        _ROOT_X.registerModel(model);
 
         // console.timeEnd('registerModel: ' + id);
         return model;
@@ -396,7 +410,7 @@ function CLASS(m) {
 
   if ( document && document.currentScript ) m.sourcePath = document.currentScript.src;
 
-  registerModelLatch(packagePath(X, m.package), m);
+  registerModelLatch(packagePath(_ROOT_X, m.package), m);
 }
 
 var MODEL = CLASS;

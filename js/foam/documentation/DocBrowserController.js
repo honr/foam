@@ -141,8 +141,10 @@ LOAD_CLASS({
       var newDAO = this.MDAO.create({model:Model});
 
       // create subcontext to safely load all models
+
       var loaderX = this.Y.sub({}, "LoaderX");
-      console.log("loader X: ", loaderX.NAME, loaderX.$UID);
+
+      X.set('LOAD_X', loaderX);
 //       loaderX.set('ModelDAO', this.ModelFileDAO.create({}, loaderX));
 //       loaderX.set('onRegisterModel', function(m) { console.log("Good onRegisterModel: ", m.id); }); 
 //       loaderX.set('lookup', lookup); 
@@ -150,7 +152,7 @@ LOAD_CLASS({
       loaderX.onRegisterModel = function(m) {  }; 
       loaderX.lookup = GLOBAL.lookup; 
       loaderX.ModelDAO.select(newDAO);
-           
+
       // All models are now in USED_MODELS
 //       [ USED_MODELS, UNUSED_MODELS, NONMODEL_INSTANCES ].forEach(function (collection) {
 //         for ( var key in collection ) {
