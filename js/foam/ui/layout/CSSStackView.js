@@ -23,7 +23,8 @@ LOAD_CLASS({
 
   requires: [
     'foam.ui.layout.CSSOverlaySlider as OverlaySlider',
-    'foam.ui.layout.FloatingView'
+    'foam.ui.layout.FloatingView',
+    'foam.core.types.DOMElementProperty'
   ],
 
   properties: [

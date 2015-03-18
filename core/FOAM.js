@@ -220,8 +220,10 @@ function arequireModel(model, param_X) {
       args.push(
         aevalTemplate(model.templates[i], model),
         (function(t) { return function(ret, m) {
-          model.getPrototype()[t.name] = m;
-          ret();
+            arequireModel(model, opt_X)(function(mdl) { 
+                mdl.getPrototype()[t.name] = m;
+            });
+            ret();
         };})(t)
       );
     }
