@@ -110,7 +110,7 @@ var JSONUtil = {
 
           arequire(obj.model_)(function(model) {
             if ( ! model ) {
-               if ( obj.model_ !== 'Template' )
+               if ( obj.model_ !== 'Template' && obj.model_ !== 'ArrayProperty' && obj.model_ !== 'ViewFactoryProperty' && obj.model_ !== 'Documentation' )
                  console.warn('Failed to dynamically load: ', obj.model_);
               future.set(obj);
               return;
@@ -435,12 +435,14 @@ JSONUtil.prettyModel = {
   keys_: {},
 
   keyify: function(str) {
-    return this.keys_[str] || (
+    if ( ! this.keys_.hasOwnProperty(str) ) {
       this.keys_[str] =
         /^[a-zA-Z\$_][0-9a-zA-Z$_]*$/.test(str) ?
         str :
-        '"' + str + '"'
-    );
+        '"' + str + '"';
+    }
+
+    return this.keys_[str];
   }
 };
 

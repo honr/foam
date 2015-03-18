@@ -25,28 +25,31 @@ CLASS({
   ],
 
   requires: [
-    'foam.lib.bookmarks.Bookmark',
+    'Binding',
+    'CachingDAO',
+    'EasyDAO',
+    'IDBDAO',
+    'LazyCacheDAO',
     'MDAO',
-    'foam.apps.quickbug.model.QIssueLabel',
-    'foam.apps.quickbug.model.QIssueStatus',
-    'foam.apps.quickbug.model.QIssueComment',
-    'foam.apps.quickbug.model.QIssueCommentUpdate',
+    'PersistentContext',
+    'Timer',
+    'foam.apps.quickbug.dao.IssueRestDAO',
     'foam.apps.quickbug.dao.QIssueCommentNetworkDAO',
     'foam.apps.quickbug.dao.QIssueCommentUpdateDAO',
-    'foam.apps.quickbug.dao.IssueRestDAO',
     'foam.apps.quickbug.dao.SyncManager',
-    'foam.apps.quickbug.model.imported.IssuePerson',
-    'foam.apps.quickbug.model.imported.Issue',
-    'foam.apps.quickbug.model.LabelStringEnumProperty',
-    'foam.apps.quickbug.model.LabelArrayProperty',
     'foam.apps.quickbug.model.DefaultQuery',
-    'EasyDAO',
-    'CachingDAO',
-    'LazyCacheDAO',
-    'IDBDAO',
-    'Timer',
-    'PersistentContext',
-    'Binding',
+    'foam.apps.quickbug.model.LabelArrayProperty',
+    'foam.apps.quickbug.model.LabelStringEnumProperty',
+    'foam.apps.quickbug.model.LabelStringProperty',
+    'foam.apps.quickbug.model.QIssueComment',
+    'foam.apps.quickbug.model.QIssueCommentUpdate',
+    'foam.apps.quickbug.model.QIssueLabel',
+    'foam.apps.quickbug.model.QIssueStatus',
+    'foam.apps.quickbug.model.imported.Issue',
+    'foam.apps.quickbug.model.imported.IssuePerson',
+    'foam.core.dao.MigrationRule',
+    'foam.lib.bookmarks.Bookmark',
+    'foam.core.dao.WhenIdleDAO',
     'foam.metrics.Metric'
   ],
 
@@ -150,7 +153,7 @@ CLASS({
           model: this.QIssueModel,
           name: this.projectName + '_' + this.QIssueModel.plural,
           migrationRules: [
-            MigrationRule.create({
+            this.MigrationRule.create({
               modelName: 'QIssue',
               version: 120,
               migration: function(ret, dao) {
@@ -192,8 +195,10 @@ CLASS({
       model_: 'DAOProperty',
       name: 'IssueCommentDAO',
       factory: function() {
-        return this.QIssueCommentUpdateDAO.create({
-          delegate: this.IssueCommentNetworkDAO
+        return this.WhenIdleDAO.create({
+          delegate: this.QIssueCommentUpdateDAO.create({
+            delegate: this.IssueCommentNetworkDAO
+          })
         });
       }
     },
@@ -208,7 +213,7 @@ CLASS({
         });
       },
       postSet: function(_, v) {
-        this.IssueCommentDAO.IssueNetworkDAO = v;
+        this.IssueCommentDAO.delegate.IssueNetworkDAO = v;
       },
       transient: true
     },
@@ -416,10 +421,10 @@ CLASS({
                 // Create initial values
                 for ( var i = 0 ; i < this.model_.properties_.length ; i++ ) {
                   var p = this.model_.properties_[i];
-
-                  if ( this.X.lookup('foam.apps.quickbug.model.LabelArrayProperty').isInstance(p) ) {
+                  
+                  if ( p.name_ === 'LabelArrayProperty' ) {
                     newValues[p.name] = [];
-                  } else if ( this.X.lookup('foam.apps.quickbug.model.LabelStringProperty').isInstance(p) ) {
+                  } else if ( p.name_ === 'LabelStringProperty' ) {
                     newValues[p.name] = '';
                   }
                 }
@@ -860,6 +865,14 @@ CLASS({
     init: function(args) {
       this.SUPER(args);
 
+      if ( this.projectName !== 'chromium' ) {
+        this.defaultSortChoices = [
+          [ DESC(this.QIssueModel.MODIFIED), 'Last modified' ],
+          [ this.QIssueModel.PRIORITY,       'Priority' ],
+          [ DESC(this.QIssueModel.ID),       'Issue ID' ]
+        ];
+      }
+
       if ( ! this.X.DontSyncProjectData ) {
         this.IssueDAO.listen(this.onDAOUpdate);
 
@@ -876,14 +889,6 @@ CLASS({
           this.syncManagerFuture.set(manager);
           manager.start();
         }.bind(this));
-
-        if ( this.projectName !== 'chromium' ) {
-          this.defaultSortChoices = [
-            [ DESC(this.QIssueModel.MODIFIED), 'Last modified' ],
-            [ this.QIssueModel.PRIORITY,       'Priority' ],
-            [ DESC(this.QIssueModel.ID),       'Issue ID' ]
-          ];
-        }
       }
     },
 

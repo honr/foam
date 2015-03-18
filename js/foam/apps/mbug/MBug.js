@@ -32,7 +32,8 @@ CLASS({
     'foam.apps.mbug.ui.IssueView',
     'foam.apps.quickbug.model.DefaultQuery',
     'foam.apps.quickbug.model.QBug',
-    'foam.ui.StackView',
+    'foam.oauth2.AutoOAuth2',
+    'foam.ui.layout.CSSStackView as StackView',
     'foam.input.touch.TouchManager',
     'IDBDAO',
     'foam.core.dao.KeywordDAO',
@@ -40,7 +41,9 @@ CLASS({
     'ContextualizingDAO',
     'foam.core.dao.CloningDAO',
     'com.google.analytics.WebMetricsReportingDAO',
-    'foam.metrics.Metric'
+    'foam.metrics.Metric',
+    'foam.oauth2.OAuth2WebClient',
+    'foam.graphics.ActionButtonCView'
   ],
 
   traits: ['foam.ui.layout.PositionedDOMViewTrait'],
@@ -56,6 +59,10 @@ CLASS({
       lazyFactory: function() { return this.IDBDAO.create({ model: this.DAOVersion }); }
     },
     {
+      name: 'autoOAuth2',
+      factory: function() { return this.AutoOAuth2.create(); }
+    },
+    {
       name: 'metricDAO',
       factory: function() {
         return this.WebMetricsReportingDAO.create({
@@ -63,7 +70,7 @@ CLASS({
           clientId: '1',
           appName: 'MBug',
           appVersion: '1.0.7'
-        })
+        });
       }
     },
     {
@@ -166,6 +173,9 @@ CLASS({
       this.SUPER();
       this.X.touchManager   = this.TouchManager.create();
       this.X.gestureManager = this.GestureManager.create();
+      this.Y.registerModel(this.ActionButtonCView.xbind({
+        haloColor: 'rgb(255,255,255)'
+      }), 'foam.graphics.ActionButtonCView');
     },
     toHTML: function() { return this.stack.toHTML(); },
     projectContext: function() {
@@ -183,7 +193,7 @@ CLASS({
       this.stack.initHTML();
 
       var self = this;
-      this.qbug.userFuture.get(function(user) {
+      this.qbug.userReady.get(function(user) {
         self.qbug.findProject(user.defaultProject, {
           put: function(p) {
             self.project = p;
@@ -213,7 +223,7 @@ CLASS({
       });
 
       // TODO: clone issue, and add listener which saves on updates
-      
+
     },
     setProject: function(projectName) {
       var self = this;
@@ -437,6 +447,12 @@ html, body { overflow: initial; }
   border-radius: 2px;
   padding: 8px 0;
   min-width: 190px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  user-select: none;
+
 }
 
 .popupChoiceList li {
@@ -664,6 +680,11 @@ ul.swipeAltHeader {
   margin: 0;
   overflow: hidden;
   padding: 0 0 0 56px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 .popupChoiceView, .actionButton {

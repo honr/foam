@@ -25,6 +25,10 @@ CLASS({
     'color',
     'element',
     {
+      name: 'startAlpha',
+      defaultValue: 1
+    },
+    {
       name: 'startX',
       defaultValue: 1
     },
@@ -39,6 +43,16 @@ CLASS({
     {
       name: 'state',
       defaultValue: 'detached'
+    },
+    {
+      model_: 'IntProperty',
+      name: 'growTime',
+      defaultValue: 400
+    },
+    {
+      model_: 'IntProperty',
+      name: 'fadeTime',
+      defaultValue: 200
     }
   ],
 
@@ -46,20 +60,33 @@ CLASS({
     {
       name: 'fire',
       code: function() {
-        var w = this.element.clientWidth;
-        var h = this.element.clientHeight;
+        var w = this.element.offsetWidth;
+        var h = this.element.offsetHeight;
         var c = this.Circle.create({
           r: 0,
-          // TODO(kgr): Optimize based on startX/Y position.
-          // startAngle: Math.PI/2,
-          // endAngle: Math.PI,
           width: w,
           height: h,
-          
           x: this.startX * w,
           y: this.startY * h,
-          color: this.color
+          color: this.color,
+          alpha: this.startAlpha
         });
+
+        // Only draw one quarter of the Circle if we're starting in a corder.
+        if ( this.startX == 0 && this.startY == 0 ) {
+          c.startAngle = Math.PI * 1.5;
+          c.endAngle   = Math.PI * 2;
+        } else if ( this.startX == 0 && this.startY == 1 ) {
+          c.startAngle = 0;
+          c.endAngle   = Math.PI / 2;
+        } else if ( this.startX == 1 && this.startY == 0 ) {
+          c.startAngle = Math.PI;
+          c.endAngle   = Math.PI * 1.5;
+        } else if ( this.startX == 1 && this.startY == 1 ) {
+          c.startAngle = Math.PI / 2;
+          c.endAngle   = Math.PI;
+        }
+
         var view = c.toView_();
         var div = document.createElement('div');
         var dStyle = div.style;
@@ -79,9 +106,9 @@ CLASS({
         view.initHTML();
 
         Movement.compile([
-          [400, function() { c.r = 1.25 * Math.sqrt(w*w + h*h); }],
+          [this.growTime, function() { c.r = 1.25 * Math.sqrt(w*w + h*h); }],
           function() { this.state = 'fading'; }.bind(this),
-          [200, function() { c.alpha = 0; }],
+          [this.fadeTime, function() { c.alpha = 0; }],
           function() { div.remove(); this.state = 'detached'; }.bind(this)
         ])();
 

@@ -194,6 +194,9 @@ MODEL({
         remove: function(obj, s, fc) {
           if ( sink.remove && ( ! obj || predicate.f(obj) ) ) sink.remove(obj, s, fc);
         },
+        reset: function() {
+          sink.reset();
+        },
         toString: function() {
           return 'PredicatedSink(' +
             sink.$UID + ', ' + predicate + ', ' + sink + ')';
@@ -341,9 +344,9 @@ MODEL({
       getter: (function() {
         var id = 1;
         return function() {
-          if (this.$UID__) return this.$UID__;
-          Object.defineProperty(this, '$UID__', { value: id });
-          ++id;
+          if ( Object.hasOwnProperty.call(this, '$UID__') ) return this.$UID__;
+          this.$UID__ = id;
+          id++;
           return this.$UID__;
         };
       })()
@@ -388,6 +391,22 @@ MODEL({
 
       var l = this.length;
       for ( var i = 0 ; i < l ; i++ ) f(this[i], i, this);
+    },
+
+    function diff(other) {
+      var added = other.slice(0);
+      var removed = [];
+      for (var i = 0; i < this.length; i++) {
+        for (var j = 0; j < added.length; j++) {
+          if (this[i].compareTo(added[j]) == 0) {
+            added.splice(j, 1);
+            j--;
+            break;
+          }
+        }
+        if (j == added.length) removed.push(this[i]);
+      }
+      return { added: added, removed: removed };
     },
 
     function binaryInsert(item) {

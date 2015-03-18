@@ -117,6 +117,12 @@ CLASS({
       return old.model_ !== nu.model_;
     },
 
+    generateContent: function() { /* rebuilds the children of the view */
+      if ( ! this.$ ) return;
+      this.$.outerHTML = this.toHTML();
+      this.initHTML();
+    },
+
     titleHTML: function() {
       /* Title text HTML formatter */
       var title = this.title;
@@ -164,6 +170,8 @@ CLASS({
          $$DOC{ref:'Template'} to render their contents instead of the
           $$DOC{ref:'DetailView.defaultToHTML'} we supply here.
       */
+
+      if ( ! this.data ) return '<span id="' + this.id + '"></span>';
 
       if ( ! this.model ) throw "DetailView: either 'data' or 'model' must be specified.";
 

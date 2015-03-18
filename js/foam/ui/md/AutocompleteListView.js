@@ -67,6 +67,11 @@ CLASS({
       defaultValue: 'DefaultRowView'
     },
     {
+      name: 'inline',
+      documentation: 'When true, no header is displayed.',
+      defaultValue: false
+    },
+    {
       name: 'className',
       defaultValueFn: function() {
         return 'md-autocomplete-list ' + (Array.isArray(this.data) ? 'array' : 'single');
@@ -91,14 +96,37 @@ CLASS({
         line-height: 48px;
         padding: 4px 0 4px 8px;
       }
+
+      .inline-header {
+        align-items: center;
+        display: flex;
+      }
+      .inline-header .text {
+        color: #999;
+        flex-grow: 1;
+        flex-shrink: 0;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 0 16px;
+      }
+      .inline-header .actionButtonCView-addRow {
+        opacity: 0.76;
+      }
     */},
     function toInnerHTML() {/*
       <% var isArray = Array.isArray(this.data); %>
-      <div class="header">
-        $$back
-        <span class="grow header-text">%%label</span>
-        <% if ( isArray ) { %> $$addRow <% } %>
-      </div>
+      <% if ( this.inline ) { %>
+        <div class="inline-header">
+          <span class="text">%%label</span>
+          <% if ( isArray ) { %> $$addRow <% } %>
+        </div>
+      <% } else { %>
+        <div class="header">
+          $$back
+          <span class="grow header-text">%%label</span>
+          <% if ( isArray ) { %> $$addRow <% } %>
+        </div>
+      <% } %>
       <div id="<%= this.scrollerID %>" class="body" style="overflow-y: auto">
         <% if ( isArray ) { %>
           <% for ( var i = 0 ; i < this.data.length ; i++ ) { %>
@@ -107,6 +135,7 @@ CLASS({
         <% } else { %>
           <div id="<%= this.on('click', function() { self.addRow(); }) %>" <%= this.rowView({data: this.data}, this.Y) %></div>
         <% } %>
+      </div>
     */}
   ],
 
@@ -135,14 +164,9 @@ CLASS({
         view.data$.addListener(function(obj, topic, old, nu) {
           this.addRowToList(nu);
         }.bind(this));
+        view.allowFocus = false;
 
-        // TODO(braden): This used to slide in from the left, but it has been
-        // disabled because mobile browsers try to scroll the input field into
-        // view when it's supposed to be offscreen to the right. It results in a
-        // really janky flow: the text box appears midway across the screen,
-        // slides halfway off to the left, and then jumps back into place.
-        this.stack.pushView(view, undefined /* label */, undefined /* back */,
-            'none' /* transition */);
+        this.stack.pushView(view);
         view.focus();
       }
     }

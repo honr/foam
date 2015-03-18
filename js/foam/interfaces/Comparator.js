@@ -1,4 +1,4 @@
- /**
+/**
  * @license
  * Copyright 2015 Google Inc. All Rights Reserved.
  *
@@ -15,35 +15,21 @@
  * limitations under the License.
  */
 
-CLASS({
-  name: 'CCView',
-  package: 'foam.apps.mbug.ui',
-  extendsModel: 'foam.ui.md.AutocompleteListView',
+__DATA({
+  model_: 'Interface',
+  name: 'Comparator',
+  package: 'foam.interfaces',
+  description: 'A strategy for comparing pairs of Objects.',
 
-  requires: [
-    'foam.apps.mbug.ui.CitationView',
-    'foam.apps.mbug.ui.PersonView',
-    'foam.apps.quickbug.model.imported.IssuePerson'
-  ],
-
-  imports: [
-    'PersonDAO as srcDAO'
-  ],
-
-  properties: [
+  methods: [
     {
-      name: 'queryFactory',
-      defaultValue: function(data) {
-        return STARTS_WITH_IC(this.IssuePerson.NAME, data);
-      }
+      name: 'compare',
+      description: 'Compare two objects, returning 0 if they are equal, > 0 if the first is larger, and < 0 if the second is.',
+      returnType: 'Int',
+      args: [
+        { name: 'o1', description: 'The first object to be compared.' },
+        { name: 'o2', description: 'The second object to be compared.' }
+      ]
     },
-    {
-      name: 'rowView',
-      defaultValue: 'foam.apps.mbug.ui.CitationView'
-    },
-    {
-      name: 'acRowView',
-      defaultValue: 'foam.apps.quickbug.ui.PersonView'
-    }
   ]
 });

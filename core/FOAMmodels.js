@@ -57,8 +57,6 @@ var files = [
   'value',
   'view',
   '../js/foam/ui/FoamTagView',
-  'AbstractDAOView',
-  'daoView',
   'cview',
   'listchoiceview',
   'scroll',
@@ -73,10 +71,8 @@ var files = [
   'dao',
   'dao2',
   'arrayDAO',
-  'diff',
   'index',
   'models',
-//  'touch',
   [ 'glang', IN_BROWSER ],
   'oauth'
 ];

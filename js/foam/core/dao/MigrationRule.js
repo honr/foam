@@ -16,31 +16,21 @@
  */
 
 CLASS({
-  name: 'IssueLabelView',
-  package: 'foam.apps.mbug.ui',
-  extendsModel: 'foam.ui.md.AutocompleteListView',
-  requires: [
-    'foam.apps.mbug.ui.LabelCitationView',
-    'foam.apps.mbug.ui.LabelView',
-    'foam.apps.quickbug.model.QIssueLabel'
-  ],
-  imports: [
-    'issueLabelDAO as srcDAO'
-  ],
+  name: 'MigrationRule',
+  package: 'foam.core.dao',
+  ids: ['modelName'],
   properties: [
     {
-      name: 'queryFactory',
-      defaultValue: function(data) {
-        return CONTAINS_IC(this.QIssueLabel.LABEL, data);
-      }
+      model_: 'StringProperty',
+      name: 'modelName',
     },
     {
-      name: 'rowView',
-      defaultValue: 'foam.apps.mbug.ui.LabelCitationView'
+      model_: 'IntProperty',
+      name: 'version'
     },
     {
-      name: 'acRowView',
-      defaultValue: 'foam.apps.mbug.ui.LabelView'
+      model_: 'FunctionProperty',
+      name: 'migration'
     }
   ]
 });

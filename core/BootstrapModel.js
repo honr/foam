@@ -32,7 +32,7 @@
 
 function defineLocalProperty(cls, name, factory) {
   Object.defineProperty(cls, name, { get: function() {
-    if ( this == cls ) return null;
+    console.assert(this !== cls, 'Called property getter from prototype: ' + name);
     var value = factory.call(this);
     Object.defineProperty(this, name, { value: value });
     return value;
@@ -365,8 +365,8 @@ var BootstrapModel = {
       });
     });
 
-    // todo: move this somewhere better
-    var createListenerTrampoline = function(cls, name, fn, isMerged, isFramed) {
+    // TODO: move this somewhere better
+    var createListenerTrampoline = function(cls, name, fn, isMerged, isFramed, whenIdle) {
       // bind a trampoline to the function which
       // re-binds a bound version of the function
       // when first called
@@ -381,9 +381,11 @@ var BootstrapModel = {
             console.log('*********************** ', this.model_.name);
           }
           */
-          if ( isFramed )
+          if ( whenIdle ) l = Movement.whenIdle(l);
+
+          if ( isFramed ) {
             l = EventService.framed(l, this.X);
-          else if ( isMerged ) {
+          } else if ( isMerged ) {
             l = EventService.merged(
               l,
               (isMerged === true) ? undefined : isMerged, this.X);
@@ -401,7 +403,7 @@ var BootstrapModel = {
     if ( Array.isArray(this.listeners) ) {
       for ( var i = 0 ; i < this.listeners.length ; i++ ) {
         var l = this.listeners[i];
-        createListenerTrampoline(cls, l.name, l.code, l.isMerged, l.isFramed);
+        createListenerTrampoline(cls, l.name, l.code, l.isMerged, l.isFramed, l.whenIdle);
       }
     } else if ( this.listeners ) {
       //          this.listeners.forEach(function(l, key) {
@@ -508,11 +510,12 @@ var BootstrapModel = {
 
   isSubModel: function(model) {
     /* Returns true if the given instance extends this $$DOC{ref:'Model'} or a descendant of this. */
-    try {
+// ???: Why was the try/catch needed?  Put back (and document) if needed.
+//    try {
       return model && model.getPrototype && ( model.getPrototype() === this.getPrototype() || this.isSubModel(model.getPrototype().__proto__.model_) );
-    } catch (x) {
-      return false;
-    }
+//    } catch (x) {
+//      return false;
+//    }
   },
 
   getPropertyWithoutCache_: function(name) { /* Internal use only. */

@@ -203,11 +203,17 @@ CLASS({
       defaultValue: true
     },
     {
+      name: 'allowFocus',
+      documentation: 'Set false to prevent the usual behavior of focusing ' +
+          'the input box. This can cause nasty scroll jank on mobile.',
+      defaultValue: true
+    },
+    {
       name: 'selection',
       postSet: function(old, nu) {
         if (nu) {
           if (this.returnOnSelect) {
-            this.data = this.subKey.f(nu);
+            this.data = this.subKey ? this.subKey.f(nu) : nu;
             this.doClose();
           } else {
             this.softData = nu;
@@ -247,7 +253,7 @@ CLASS({
       <div class="arvBody" id="%%scrollerID">
         $$filteredDAO{ rowView: this.rowView }
       </div>
-      <% this.addInitializer(function() { self.qView.focus(); }); %>
+      <% this.addInitializer(function() { if (self.allowFocus) self.qView.focus(); }); %>
     */}
   ],
 
@@ -257,6 +263,7 @@ CLASS({
       if ( this.closed_ ) return;
       this.closed_ = true;
 
+      this.qView.blur();
       this.stack.back();
     }
   },
@@ -275,10 +282,10 @@ CLASS({
       name: 'accept',
       label: '',
       iconUrl: 'images/ic_done_24dp.png',
-      keyboardShortcuts: [ 13 /* enter */ ],
+      //keyboardShortcuts: [ 13 /* enter */ ],
       isAvailable: function() { return this.selected; },
       action: function() {
-        var key = this.subKey.f(this.softData);
+        var key = this.subKey ? this.subKey.f(this.softData) : this.softData;
         this.data = key;
         this.doClose();
       }

@@ -440,7 +440,11 @@ var FunctionStack = {
 
 var PropertyValue = {
   create: function(obj, prop) {
-    return { __proto__: this, $UID: obj.$UID + '.' + prop, obj: obj, prop: prop };
+    var o = Object.create(this);
+    o.$UID = obj.$UID + '.' + prop;
+    o.obj  = obj;
+    o.prop = prop;
+    return o;
   },
 
   get: function() { return this.obj[this.prop]; },
@@ -744,22 +748,29 @@ MODEL({
 
         function stop() {
           if ( ! stopped ) {
-            if ( Movement.liveAnimations_ === 1 ) {
+            Movement.liveAnimations_--;
+            stopped = true;
+            opt_onEnd && opt_onEnd();
+            opt_onEnd = null;
+
+            if ( Movement.liveAnimations_ === 0 ) {
               var tasks = Movement.idleTasks_;
               if ( tasks && tasks.length > 0 ) {
                 Movement.idleTasks_ = [];
                 setTimeout(function() {
-                  for ( var i = 0 ; i < tasks.length ; i++ ) {
-                    Movement.whenIdle(tasks[i]);
+                  // Since this is called asynchronously, there might be a new
+                  // animation. If so, queue up the tasks again.
+                  var i;
+                  if (Movement.liveAnimations_ > 0) {
+                    for ( i = 0 ; i < tasks.length ; i++ )
+                      Movement.idleTasks_.push(tasks[i]);
+                  } else {
+                    for ( i = 0 ; i < tasks.length ; i++ ) tasks[i]();
                   }
-                }, 0);
+                }, 20);
               }
             }
-            Movement.liveAnimations_--;
           }
-          stopped = true;
-          opt_onEnd && opt_onEnd();
-          opt_onEnd = null;
         }
 
         if ( fn ) {
@@ -800,17 +811,17 @@ MODEL({
       };
     },
 
-    whenIdle: function(task) {
-      // Given a function, one of two things will happen:
-      // - If an animation is in progress, the task is postponed until no
-      //   animations are running.
-      // - With no animation running, the task is processed immediately.
-      if ( Movement.liveAnimations_ > 0 ) {
-        if ( ! Movement.idleTasks_ ) Movement.idleTasks_ = [];
-        Movement.idleTasks_.push(task);
-      } else {
-        task();
-      }
+    whenIdle: function(fn) {
+      // Decorate a function to defer execution until no animations are running
+      return function() {
+        if ( Movement.liveAnimations_ > 0 ) {
+          if ( ! Movement.idleTasks_ ) Movement.idleTasks_ = [];
+          var args = arguments;
+          Movement.idleTasks_.push(function() { fn.apply(fn, args); });
+        } else {
+          fn.apply(fn, arguments);
+        }
+      };
     },
 
     // requires unsubscribe to work first (which it does now)

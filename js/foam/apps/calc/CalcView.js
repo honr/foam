@@ -10,9 +10,10 @@
  */
 
 CLASS({
-  name: 'CalcView',
   package: 'foam.apps.calc',
+  name: 'CalcView',
   extendsModel: 'foam.ui.View',
+
   requires: [
     'foam.apps.calc.HistoryCitationView',
     'foam.ui.SlidePanel',
@@ -21,13 +22,62 @@ CLASS({
     'foam.apps.calc.TertiaryButtonsView',
     'foam.apps.calc.CalcButton',
     'foam.apps.calc.CalcSpeechView',
-    'foam.apps.calc.Fonts'
-    
+    'foam.apps.calc.Fonts',
+    'foam.apps.calc.NumberFormatter',
+    'foam.ui.animated.Label'
     // 'foam.chromeapp.ui.ZoomView'
   ],
+
   exports: [
     'data'
   ],
+
+  properties: [
+    {
+      model_: 'StringProperty',
+      name: 'row1Formatted',
+      view: 'foam.ui.animated.Label',
+      preSet: function(_,nu) {
+        return this.numberFormatter.i18nNumber(nu);
+      }
+    },
+    {
+      name: 'data',
+      postSet: function() {
+        this.numberFormatter = this.data.numberFormatter;
+        Events.follow(this.data.row1$, this.row1Formatted$);
+      }
+    }
+  ],
+
+  methods: {
+    initHTML: function() {
+      this.SUPER();
+      this.$.addEventListener('paste', this.onPaste);
+    }
+  },
+
+  listeners: [
+    {
+      name: 'onPaste',
+      whenIdle: true,
+      code: function(evt) {
+        var CMD = { '0': '0', '1': '1', '2': '2', '3': '3', '4': '4', '5': '5', '6': '6', '7': '7', '8': '8', '9': '9', '+': 'plus', '-': 'minus', '*': 'mult', '/': 'div', '%': 'percent', '=': 'equals' };
+
+        CMD[this.data.numberFormatter.useComma ? ',' : '.'] = 'point';
+
+        var data = evt.clipboardData.getData('text/plain');
+        for ( var i = 0 ; i < data.length ; i++ ) {
+          var c = data.charAt(i);
+          // If history is empty and the first character is '-' then insert a 0 to subtract from
+          if ( c === '-' && ! i && ! this.data.history.length && ! this.data.row1 ) this.data['0']();
+          var cmd = CMD[c];
+          if ( cmd ) this.data[cmd]();
+        }
+      }
+    }
+  ],
+
   templates: [
     function CSS() {/*
     * {
@@ -220,7 +270,7 @@ CLASS({
           <div class="calc-display">
             <div class="inner-calc-display">
               $$history{ rowView: 'foam.apps.calc.HistoryCitationView' }
-              <div>$$row1{mode: 'read-only', tabIndex: 3, escapeHTML: false}</div>
+              <div>$$row1Formatted{mode: 'read-only', tabIndex: 3, escapeHTML: false}</div>
             </div>
           </div>
           <div class="keypad">

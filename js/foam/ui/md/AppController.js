@@ -24,8 +24,8 @@ CLASS({
     'foam.ui.md.SharedStyles',
     'foam.ui.DAOListView',
     'foam.ui.PopupChoiceView',
-    'PredicatedView',
-    'ScrollView',
+    'foam.ui.PredicatedView',
+    'foam.ui.ScrollView',
     'foam.ui.SpinnerView',
     'foam.ui.SwipeAltView',
     'foam.ui.ViewChoice'
@@ -218,7 +218,7 @@ CLASS({
         iconWidth:  24,
         iconHeight: 24
       }), 'foam.ui.ActionButton');
-      
+
       var self = this;
       Events.dynamic(
         function() { self.sortOrder; self.q; },
@@ -242,10 +242,10 @@ CLASS({
                <%= this.data.spinner %>
              </span>
            <% } %>
-           $$enterSearchMode %%data.sortOrderView
+           $$enterSearchMode{halo: ''} %%data.sortOrderView
          </span>
          <span class="search">
-           $$leaveSearchMode{className: 'backButton'} $$q
+           $$leaveSearchMode{className: 'backButton', halo: ''} $$q
          </span>
        </div>
        %%data.filteredDAOView
