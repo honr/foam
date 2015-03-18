@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'DocDiagramView',
   extendsModel: 'foam.graphics.CViewView',
   package: 'foam.documentation.diagram',

@@ -10,7 +10,7 @@
  */
 
 // TODO: Use this font for timer: http://www.dafont.com/digital-7.font
-LOAD_CLASS({
+CLASS({
   package: 'com.google.sweeper',
   name: 'Game',
 

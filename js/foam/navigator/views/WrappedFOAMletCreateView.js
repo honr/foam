@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'WrappedFOAMletCreateView',
   package: 'foam.navigator.views',
   extendsModel: 'foam.navigator.views.CreateView',

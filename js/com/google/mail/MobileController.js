@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'MobileController',
   package: 'com.google.mail',
   description: 'Mobile Gmail',

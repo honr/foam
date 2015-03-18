@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'LabelArrayProperty',
   package: 'foam.apps.quickbug.model',
   extendsModel: 'StringArrayProperty',

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'DocDiagramTrait',
   package: 'foam.documentation.diagram',
   // enhances BaseDetailView to add diagram support

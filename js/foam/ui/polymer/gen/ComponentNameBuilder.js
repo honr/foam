@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'ComponentNameBuilder',
   package: 'foam.ui.polymer.gen',
   extendsModel: 'foam.ui.polymer.gen.ComponentBuilderBase',

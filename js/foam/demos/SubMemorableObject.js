@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'SubMemorableObject',
   package: 'foam.demos',
   traits: ['foam.memento.MemorableTrait'],

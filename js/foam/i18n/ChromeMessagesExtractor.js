@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'ChromeMessagesExtractor',
   package: 'foam.i18n',
   extendsModel: 'foam.i18n.MessagesExtractor',

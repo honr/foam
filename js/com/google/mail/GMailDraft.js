@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
    "model_": "Model",
    "id": "com.google.mail.GMailDraft",
    "package": "com.google.mail",

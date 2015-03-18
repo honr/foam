@@ -16,7 +16,7 @@
  */
 
 
-LOAD_CLASS({
+CLASS({
   name: 'ParentageListener',
   documentation: "Tracks changes in a parent chain and runs bind/unbind functions as parents enter or leave.",
   package: 'foam.patterns',

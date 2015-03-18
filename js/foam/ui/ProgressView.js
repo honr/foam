@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'ProgressView',
 
   extendsModel: 'foam.ui.View',

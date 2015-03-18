@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'MenuLabelCitationView',
   package: 'com.google.mail',
   extendsModel: 'foam.ui.DetailView',

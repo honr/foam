@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'SpinnerView',
   extendsModel: 'foam.ui.View',
   package: 'foam.ui',

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   package: 'foam.demos.physics',
   name: 'CollisionWithSpring',
   extendsModel: 'foam.graphics.CView',

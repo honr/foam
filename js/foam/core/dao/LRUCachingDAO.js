@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'LRUCachingDAO',
   package: 'foam.core.dao',
 

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'GMailUserInfo',
   package: 'com.google.mail',
   properties: ['email', 'name', 'avatarUrl'],

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   package: 'foam.ui.md',
   name: 'ResponsiveAppControllerView',
   extendsModel: 'foam.ui.layout.ResponsiveView',

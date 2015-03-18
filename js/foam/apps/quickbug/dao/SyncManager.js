@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'SyncManager',
   package: 'foam.apps.quickbug.dao',
 

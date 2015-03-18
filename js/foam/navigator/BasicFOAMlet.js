@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'BasicFOAMlet',
   extendsModel: 'foam.navigator.FOAMlet',
   package: 'foam.navigator',

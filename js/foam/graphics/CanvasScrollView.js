@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   package: 'foam.graphics',
   name: 'CanvasScrollView',
   extendsModel: 'foam.graphics.CView',

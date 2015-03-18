@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
    "model_": "Model",
    "package": "foam.ui.layout",
    "name": "FloatingView",

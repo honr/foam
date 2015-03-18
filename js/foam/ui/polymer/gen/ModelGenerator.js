@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'ModelGenerator',
   package: 'foam.ui.polymer.gen',
 
@@ -584,7 +584,7 @@ LOAD_CLASS({
       action: function() {
         this.components.forEach(function(comp) {
           try {
-            LOAD_CLASS(comp);
+            CLASS(comp);
             ++this.modelsLoadingCount;
           } catch (e) { debugger; }
         }.bind(this));

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'ManuallyDelayedSelectDAO',
   package: 'foam.core.dao',
   extendsModel: 'ProxyDAO',

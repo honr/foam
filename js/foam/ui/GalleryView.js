@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'GalleryView',
   extendsModel: 'foam.ui.SwipeAltView',
   package: 'foam.ui',

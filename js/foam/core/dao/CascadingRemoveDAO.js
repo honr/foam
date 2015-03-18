@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'CascadingRemoveDAO',
   help: "Removes dependent children from a secondary DAO when a parent is removed from the delegate.",
 package: 'foam.core.dao',

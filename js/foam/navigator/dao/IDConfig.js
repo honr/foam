@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'IDConfig',
   package: 'foam.navigator.dao',
 

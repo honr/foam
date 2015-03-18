@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'DOMPanel',
   package: 'foam.ui.layout',
   extendsModel: 'foam.ui.BaseView',

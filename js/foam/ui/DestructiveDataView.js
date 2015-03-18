@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'DestructiveDataView',
   package: 'foam.ui',
   extendsModel: 'foam.ui.BaseView',

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'ToolbarCSS',
   package: 'foam.ui.md',
   templates: [

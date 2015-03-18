@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'IntFieldView',
   package: 'foam.ui.md',
   extendsModel: 'foam.ui.md.TextFieldView'

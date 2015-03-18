@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   package: 'com.google.mail',
   name: 'Sync',
   extendsModel: 'foam.core.dao.Sync',

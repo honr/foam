@@ -16,7 +16,7 @@
  */
 
 
-LOAD_CLASS({
+CLASS({
   name: 'Section',
   package: 'foam.graphics.diagram',
   label: 'Section',

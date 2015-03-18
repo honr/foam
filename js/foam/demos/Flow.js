@@ -9,7 +9,7 @@
  *     http://www.apache.org/licenses/LICENSE-2.0
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'Flow',
   package: 'foam.demos',
   extendsModel: 'foam.flow.Section',

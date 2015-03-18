@@ -20,7 +20,7 @@
    Use MementoMgr.
    Browser history support.
 */
-LOAD_CLASS({
+CLASS({
   name: 'StackView',
   extendsModel: 'foam.ui.View',
   package: 'foam.ui',

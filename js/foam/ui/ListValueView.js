@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'ListValueView',
   help: 'Combines an input view with a value view for the edited value.',
 

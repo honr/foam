@@ -16,7 +16,7 @@
  */
 
 
-LOAD_CLASS({
+CLASS({
   name: 'GestureTarget',
   package: 'foam.input.touch',
   help: 'Created by each view that wants to receive gestures.',

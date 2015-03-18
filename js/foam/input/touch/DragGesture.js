@@ -16,7 +16,7 @@
  */
  
 
-LOAD_CLASS({
+CLASS({
   name: 'DragGesture',
   package: 'foam.input.touch',
   extendsModel: 'foam.input.touch.Gesture',

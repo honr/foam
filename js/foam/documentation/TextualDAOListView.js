@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'TextualDAOListView',
   package: 'foam.documentation',
   extendsModel: 'foam.ui.DAOListView',

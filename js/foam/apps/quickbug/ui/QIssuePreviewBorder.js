@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'QIssuePreviewBorder',
   package: 'foam.apps.quickbug.ui',
   help: 'Wraps a QIssueDetailView in a manner appropriate for a popup.',

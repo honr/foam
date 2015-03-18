@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name:  'DateTimeFieldView',
   label: 'Date-Time Field',
   package: 'foam.ui',

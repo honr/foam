@@ -16,7 +16,7 @@
  */
 
 
-LOAD_CLASS({
+CLASS({
   name: 'VerticalScrollNativeTrait',
   package: 'foam.input.touch',
   requires: [

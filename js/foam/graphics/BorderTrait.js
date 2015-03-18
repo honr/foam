@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   package: 'foam.graphics',
   name:  'BorderTrait',
   documentation: function() {/* Add $$DOC{ref:'.'} to a CView to paint

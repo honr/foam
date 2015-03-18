@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   package: 'foam.documentation',
   name: 'DocModelFeatureDAOTrait',
   documentation: "Generates a featureDAO of all the inherited features of a $$DOC{ref:'Model'}.",

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
  
-LOAD_CLASS({
+CLASS({
   name: 'AutoSizeDiagramRoot',
   package: 'foam.graphics.diagram',
   extendsModel: 'foam.graphics.LockToPreferredLayout',

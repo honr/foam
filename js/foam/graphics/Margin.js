@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   package: 'foam.graphics',
   name: 'Margin',
   extendsModel: 'foam.graphics.CView',

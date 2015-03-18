@@ -10,7 +10,7 @@
  */
 
 
-LOAD_CLASS({
+CLASS({
   name: 'Name',
   package: 'foam',
 

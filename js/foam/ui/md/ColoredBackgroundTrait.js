@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'ColoredBackgroundTrait',
   package: 'foam.ui.md',
   properties: [

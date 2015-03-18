@@ -16,7 +16,7 @@
  */
 
 /** Collision detection manager. **/
-LOAD_CLASS({
+CLASS({
   package: 'foam.physics',
   name: 'Collider',
   properties: [

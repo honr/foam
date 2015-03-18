@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'ViewSwitcher',
   extendsModel: 'foam.ui.SimpleView',
 

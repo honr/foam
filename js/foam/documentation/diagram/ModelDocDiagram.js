@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'ModelDocDiagram',
   package: 'foam.documentation.diagram',
   extendsModel: 'foam.ui.DestructiveDataView',

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   package: 'foam.documentation.diagram',
   name: 'TraitListDiagram',
 

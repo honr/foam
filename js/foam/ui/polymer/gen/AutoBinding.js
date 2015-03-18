@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'AutoBinding',
   package: 'foam.ui.polymer.gen',
   extendsModel: 'foam.ui.polymer.gen.View',

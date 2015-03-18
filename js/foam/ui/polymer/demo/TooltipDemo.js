@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'TooltipDemo',
   package: 'foam.ui.polymer.demo',
   extendsModel: 'foam.ui.View',

@@ -16,7 +16,7 @@
  */
 
 // TODO: ActionBorder should use this.
-LOAD_CLASS({
+CLASS({
   name:  'ToolbarView',
   label: 'Toolbar',
   package: 'foam.ui',

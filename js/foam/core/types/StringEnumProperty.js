@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'StringEnumProperty',
   package: 'foam.core.types',
   traits: ['foam.core.types.EnumPropertyTrait'],

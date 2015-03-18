@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'IssueView',
 
   package: 'foam.apps.mbug.ui',

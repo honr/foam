@@ -17,7 +17,7 @@
 
 
  
-LOAD_CLASS({
+CLASS({
   name: 'LayoutItemLinearConstraintsProxy',
   package: 'foam.patterns.layout',
 

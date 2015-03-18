@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'ToolbarRichTextView',
   package: 'foam.ui.md',
   extendsModel: 'foam.ui.RichTextView',

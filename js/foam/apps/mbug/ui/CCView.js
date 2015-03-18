@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'CCView',
   package: 'foam.apps.mbug.ui',
   extendsModel: 'foam.ui.md.AutocompleteListView',

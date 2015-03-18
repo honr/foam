@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'AddRowView',
   package: 'foam.ui.md',
   extendsModel: 'foam.ui.SimpleView',

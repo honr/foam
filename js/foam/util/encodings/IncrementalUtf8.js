@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
    "model_": "Model",
    "id": "foam.util.encodings.IncrementalUtf8",
    "package": "foam.util.encodings",

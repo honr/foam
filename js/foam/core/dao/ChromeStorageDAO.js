@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'ChromeStorageDAO',
   package: 'foam.core.dao',
   label: 'Chrome Storage DAO',

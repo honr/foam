@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'JSONFileDAO',
   package: 'foam.core.dao',
   extendsModel: 'AbstractFileDAO',

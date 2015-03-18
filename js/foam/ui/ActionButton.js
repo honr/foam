@@ -18,7 +18,7 @@
  
  
 // TODO: add ability to set CSS class and/or id
-LOAD_CLASS({
+CLASS({
   name: 'ActionButton',
   package: 'foam.ui',
 

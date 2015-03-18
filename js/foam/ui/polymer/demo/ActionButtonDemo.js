@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'ActionButtonDemo',
   package: 'foam.ui.polymer.demo',
   extendsModel: 'foam.ui.View',

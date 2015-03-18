@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'Location',
   package: 'foam.apps.quickbug.model',
 

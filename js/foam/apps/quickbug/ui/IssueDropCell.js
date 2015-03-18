@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'IssueDropCell',
   package: 'foam.apps.quickbug.ui',
   extendsModel: 'foam.ui.View',

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'FunctionWrapper',
   package: 'foam.ui.polymer.gen',
 

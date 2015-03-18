@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   "model_": "Model",
   "id": "com.google.mail.GMailMessageDAO",
   "package": "com.google.mail",

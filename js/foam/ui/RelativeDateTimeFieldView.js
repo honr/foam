@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name:  'RelativeDateTimeFieldView',
   label: 'Relative Date-Time Field',
 

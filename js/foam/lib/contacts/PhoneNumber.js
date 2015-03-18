@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
    "model_": "Model",
    "id": "foam.lib.contacts.PhoneNumber",
    "package": "foam.lib.contacts",

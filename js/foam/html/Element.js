@@ -16,7 +16,7 @@
  */
 
 
-LOAD_CLASS({
+CLASS({
   package: 'foam.html',
   name: 'Element',
 

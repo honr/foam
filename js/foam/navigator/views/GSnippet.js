@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'GSnippet',
   package: 'foam.navigator.views',
   extendsModel: 'foam.ui.DetailView',

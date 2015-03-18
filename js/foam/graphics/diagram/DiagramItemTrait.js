@@ -16,7 +16,7 @@
  */
 
 
-LOAD_CLASS({
+CLASS({
   name: 'DiagramItemTrait',
   package: 'foam.graphics.diagram',
 

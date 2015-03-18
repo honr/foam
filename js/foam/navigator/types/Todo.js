@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'Todo',
   package: 'foam.navigator.types',
   extendsModel: 'foam.navigator.BasicFOAMlet',

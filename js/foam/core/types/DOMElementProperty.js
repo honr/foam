@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'DOMElementProperty',
   package: 'foam.core.types',
   extendsModel: 'StringProperty',

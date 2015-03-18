@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'SolarSystem',
   package: 'foam.demos',
   extendsModel: 'foam.ui.View',

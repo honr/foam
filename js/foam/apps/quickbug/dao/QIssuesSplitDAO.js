@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'QIssuesSplitDAO',
   package: 'foam.apps.quickbug.dao',
   extendsModel: 'AbstractDAO',

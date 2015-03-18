@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'PersonCompleter',
   package: 'foam.apps.quickbug',
   properties: [

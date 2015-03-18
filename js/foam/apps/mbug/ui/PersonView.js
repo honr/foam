@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'PersonView',
   package: 'foam.apps.mbug.ui',
   requires: [

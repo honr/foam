@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'DocRef',
   package: 'foam.documentation',
   label: 'Documentation Reference',

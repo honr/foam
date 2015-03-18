@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'Gesture',
   package: 'foam.input.touch',
   help: 'Installed in the GestureManager to watch for a particular kind of gesture',

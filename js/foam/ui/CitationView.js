@@ -17,7 +17,7 @@
  
 
  
-LOAD_CLASS({
+CLASS({
   name: 'CitationView',
   package: 'foam.ui',
 

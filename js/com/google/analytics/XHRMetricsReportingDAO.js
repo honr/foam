@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'XHRMetricsReportingDAO',
   package: 'com.google.analytics',
   extendsModel: 'com.google.analytics.AbstractMetricsReportingDAO',

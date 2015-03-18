@@ -16,7 +16,7 @@
  */
 
 
-LOAD_CLASS({
+CLASS({
   name: 'ModelCompletenessRecord',
   package: 'foam.documentation',
 

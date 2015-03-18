@@ -16,14 +16,14 @@
  */
  
 
-// LOAD_CLASS({
+// CLASS({
 //   name: 'InheritedProperty',
 //   extendsModel: 'Property',
 //   package: 'foam.views',
 //   traits: ['foam.patterns.InheritedPropertyTrait']
 // });
 
-// LOAD_CLASS({
+// CLASS({
 //   name: 'ContextMutableProperty',
 //   extendsModel: 'Property',
 //   package: 'foam.views',
@@ -33,7 +33,7 @@
 
 
 //
-// LOAD_CLASS({
+// CLASS({
 //   name: 'AbstractDAOView',
 //   package: 'foam.ui',
 //
@@ -44,7 +44,7 @@
 
 
 
-LOAD_CLASS({
+CLASS({
   name: 'CollapsibleView',
   package: 'foam.ui',
   extendsModel: 'foam.ui.View',

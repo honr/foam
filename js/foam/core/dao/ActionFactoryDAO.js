@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'ActionFactoryDAO',
   package: 'foam.core.dao',
   extendsModel: 'ProxyDAO',

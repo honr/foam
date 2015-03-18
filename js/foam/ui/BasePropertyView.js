@@ -16,7 +16,7 @@
  */
 
 
-LOAD_CLASS({
+CLASS({
   name: 'BasePropertyView',
   package: 'foam.ui',
   extendsModel: 'foam.ui.BaseView',

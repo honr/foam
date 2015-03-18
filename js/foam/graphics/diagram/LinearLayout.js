@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'LinearLayout',
   package: 'foam.graphics.diagram',
    

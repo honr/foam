@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-LOAD_CLASS({
+CLASS({
   model_: 'Model',
   name: 'IssuePerson',
   package: 'foam.apps.quickbug.model.imported',

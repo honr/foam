@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'GSnippetMetadatum',
   package: 'foam.navigator.views',
   documentation: function() {/*

@@ -16,7 +16,7 @@
  */
 
 
-LOAD_CLASS({
+CLASS({
   name: 'GestureManager',
   package: 'foam.input.touch',
   requires: [

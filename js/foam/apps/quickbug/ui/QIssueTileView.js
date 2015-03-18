@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'QIssueTileView',
   package: 'foam.apps.quickbug.ui',
   label: 'QIssue Tile View',

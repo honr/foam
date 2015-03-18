@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   package: 'foam.graphics',
   name: 'Rectangle',
   extendsModel: 'foam.graphics.SimpleRectangle',

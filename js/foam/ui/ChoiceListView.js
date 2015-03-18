@@ -16,7 +16,7 @@
  */
  
 
-LOAD_CLASS({
+CLASS({
   name: 'ChoiceListView',
   package: 'foam.ui',
 

@@ -16,7 +16,7 @@
  */
  
  
-LOAD_CLASS({
+CLASS({
   name:  'TextFieldView',
   label: 'Text Field',
   package: 'foam.ui',

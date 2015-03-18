@@ -16,7 +16,7 @@
  */
 
  
-LOAD_CLASS({
+CLASS({
   name: 'UpdateDetailView',
   package: 'foam.ui',
   extendsModel: 'foam.ui.DetailView',

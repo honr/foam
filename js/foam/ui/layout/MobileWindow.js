@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'MobileWindow',
   package: 'foam.ui.layout',
   extendsModel: 'foam.ui.layout.Window',

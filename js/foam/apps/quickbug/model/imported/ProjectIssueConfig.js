@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
    "name": "ProjectIssueConfig",
    "package": "foam.apps.quickbug.model.imported",
    "tableProperties": [

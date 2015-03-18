@@ -16,7 +16,7 @@
  */
 
  
-LOAD_CLASS({
+CLASS({
   name: 'LockToPreferredLayout',
   package: 'foam.graphics.diagram',
   extendsModel: 'foam.graphics.LockToPreferredLayout',

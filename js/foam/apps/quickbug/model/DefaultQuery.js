@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
    name: 'DefaultQuery',
    package: 'foam.apps.quickbug.model',
 

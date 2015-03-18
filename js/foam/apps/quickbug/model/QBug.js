@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'QBug',
   package: 'foam.apps.quickbug.model',
   label: 'Quick Bug',

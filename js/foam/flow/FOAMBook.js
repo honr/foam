@@ -10,7 +10,7 @@
  */
 
 
-LOAD_CLASS({
+CLASS({
   name: 'FOAMBook',
   package: 'foam.flow',
   extendsModel: 'foam.flow.Section',

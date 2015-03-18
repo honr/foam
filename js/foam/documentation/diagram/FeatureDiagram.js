@@ -16,7 +16,7 @@
  */
 
 
-LOAD_CLASS({
+CLASS({
   name: 'FeatureDiagram',
   package: 'foam.documentation.diagram',
   extendsModel: 'foam.ui.BaseView',

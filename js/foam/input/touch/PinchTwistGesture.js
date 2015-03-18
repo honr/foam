@@ -17,7 +17,7 @@
  
  
 
-LOAD_CLASS({
+CLASS({
   name: 'PinchTwistGesture',
   package: 'foam.input.touch',
   extendsModel: 'foam.input.touch.Gesture',

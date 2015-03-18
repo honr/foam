@@ -16,7 +16,7 @@
  */
 
 
-LOAD_CLASS({
+CLASS({
   name:  'DAOUpdateController',
   label: 'DAO Update',
   package: 'foam.ui',

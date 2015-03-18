@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'HelpView',
 
   extendsModel: 'foam.ui.View',

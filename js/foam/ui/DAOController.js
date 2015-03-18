@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name:  'DAOController',
   label: 'DAO Controller',
   package: 'foam.ui',

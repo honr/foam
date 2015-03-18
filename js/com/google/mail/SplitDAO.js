@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'SplitDAO',
   package: 'com.google.mail',
   extendsModel: 'ProxyDAO',

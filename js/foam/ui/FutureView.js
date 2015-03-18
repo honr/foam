@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'FutureView',
   extendsModel: 'foam.ui.View',
   // Works as follows: when it starts up, it will create a 10ms timer.

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'StringArrayView',
 
   extendsModel: 'foam.ui.TextFieldView',

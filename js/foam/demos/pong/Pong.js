@@ -1,4 +1,4 @@
-LOAD_CLASS({
+CLASS({
   package: 'foam.demos.pong',
   name: 'Ball',
   extendsModel: 'foam.graphics.Circle',
@@ -12,7 +12,7 @@ LOAD_CLASS({
 });
 
 
-LOAD_CLASS({
+CLASS({
   package: 'foam.demos.pong',
   name: 'Paddle',
   extendsModel: 'foam.graphics.Circle',
@@ -25,7 +25,7 @@ LOAD_CLASS({
 });
 
 
-LOAD_CLASS({
+CLASS({
   package: 'foam.demos.pong',
   name: 'Pong',
   extendsModel: 'foam.ui.View',

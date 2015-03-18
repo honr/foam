@@ -16,7 +16,7 @@
  */
 
 
-LOAD_CLASS({
+CLASS({
   name: 'ModelListController',
   package: 'foam.documentation',
 

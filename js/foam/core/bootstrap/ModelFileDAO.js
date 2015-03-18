@@ -30,9 +30,9 @@ MODEL({
       }
       
       // 2. Model is already loaded, but not yet registered in the context
-      if ( GLOBAL.X.LOAD_CLASS$modelFactories && GLOBAL.X.LOAD_CLASS$modelFactories[key] ) {
+      if ( GLOBAL.X.CLASS$modelFactories && GLOBAL.X.CLASS$modelFactories[key] ) {
         // run the factory with our context, X (not the global one!)
-        GLOBAL.X.LOAD_CLASS$modelFactories[key](X);
+        GLOBAL.X.CLASS$modelFactories[key](X);
         // lookup should now access the newly registerd model
         model = X.lookup(key);
         if ( model ) {
@@ -50,9 +50,9 @@ MODEL({
       
       tag.onload = function() {
         // TODO: copy paste cleanup!
-        if ( GLOBAL.X.LOAD_CLASS$modelFactories && GLOBAL.X.LOAD_CLASS$modelFactories[key] ) {
+        if ( GLOBAL.X.CLASS$modelFactories && GLOBAL.X.CLASS$modelFactories[key] ) {
           // run the factory with our context, X (not the global one!)
-          GLOBAL.X.LOAD_CLASS$modelFactories[key](X);
+          GLOBAL.X.CLASS$modelFactories[key](X);
           // lookup should now access the newly registerd model
           var model = X.lookup(key);
           if ( model ) {

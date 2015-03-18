@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'ParitionDAO',
   package: 'foam.core.dao',
   extendsModel: 'AbstractDAO',

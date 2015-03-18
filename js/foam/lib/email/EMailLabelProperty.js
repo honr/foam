@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   "model_": "Model",
   "id": "foam.lib.email.EMailLabelProperty",
   "package": "foam.lib.email",

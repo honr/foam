@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   name: 'ModelDescriptionRowView',
   extendsModel: 'foam.ui.View',
   package: 'foam.documentation',

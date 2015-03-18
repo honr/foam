@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-LOAD_CLASS({
+CLASS({
   package: 'foam.ui',
   name: 'SlidePanel',
   extendsModel: 'foam.ui.View',

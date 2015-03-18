@@ -17,7 +17,7 @@
 
 
 
-LOAD_CLASS({
+CLASS({
   name: 'ControllerView',
   extendsModel: 'foam.ui.DetailView',
   package: 'foam.documentation',

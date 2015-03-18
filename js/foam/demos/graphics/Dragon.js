@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-LOAD_CLASS({
+CLASS({
   package: 'foam.demos.graphics',
   name:  'Dragon',
   extendsModel: 'foam.graphics.CView',
