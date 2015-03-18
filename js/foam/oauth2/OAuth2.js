@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'OAuth2',
   package: 'foam.oauth2',
   requires: [

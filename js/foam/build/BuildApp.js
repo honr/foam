@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   package: 'foam.build',
   name: 'BuildApp',
 
@@ -271,7 +271,7 @@ CLASS({
             model.templates[j].clearProperty('template');
           }
         }
-        contents += 'CLASS(';
+        contents += 'LOAD_CLASS(';
         if ( this.precompileTemplates )
           contents += this.formatter.where(NOT_TRANSIENT).stringify(models[ids[i]]);
         else

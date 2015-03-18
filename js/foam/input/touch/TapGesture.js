@@ -17,7 +17,7 @@
 
 
 
-CLASS({
+LOAD_CLASS({
   name: 'TapGesture',
   package: 'foam.input.touch',
   extendsModel: 'foam.input.touch.Gesture',

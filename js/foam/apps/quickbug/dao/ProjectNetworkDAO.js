@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   package: 'foam.apps.quickbug.dao',
   name: 'ProjectNetworkDAO',
   extendsModel: 'foam.core.dao.RestDAO',

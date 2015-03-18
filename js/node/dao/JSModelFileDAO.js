@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
    "model_": "Model",
    "id": "node.dao.JSModelFileDAO",
    "package": "node.dao",
@@ -109,7 +109,7 @@ CLASS({
               }
 
               var buffer = new Buffer(
-                self.apache2Header() + "CLASS(" + JSONUtil.where(NOT_TRANSIENT).stringify(obj) + ");\n");
+                self.apache2Header() + "LOAD_CLASS(" + JSONUtil.where(NOT_TRANSIENT).stringify(obj) + ");\n");
               var offset = 0;
 
               awhile(

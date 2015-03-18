@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-CLASS({
+LOAD_CLASS({
   package: 'foam.apps.calc',
   name: 'CalcSpeechView',
   extendsModel: 'foam.ui.View',

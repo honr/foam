@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
    "model_": "Model",
    "id": "foam.lib.email.EMailMutationAction",
    "package": "foam.lib.email",

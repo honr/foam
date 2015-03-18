@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'OAuth2WebClient',
   package: 'foam.oauth2',
   help: 'Strategy for OAuth2 when running as a web page.',

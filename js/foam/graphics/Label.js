@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   package: 'foam.graphics',
   name:  'Label',
   extendsModel: 'foam.graphics.CView',

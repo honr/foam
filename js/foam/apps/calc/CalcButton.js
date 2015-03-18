@@ -9,7 +9,7 @@
  *     http://www.apache.org/licenses/LICENSE-2.0
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'CalcButton',
   package: 'foam.apps.calc',
   extendsModel: 'foam.graphics.ActionButtonCView',

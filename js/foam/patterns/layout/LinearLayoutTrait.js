@@ -16,7 +16,7 @@
  */
 
 
-CLASS({
+LOAD_CLASS({
   name: 'LinearLayoutTrait',
   package: 'foam.patterns.layout',
 

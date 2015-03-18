@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'BaseView',
   package: 'foam.ui',
   extendsModel: 'foam.patterns.ChildTreeTrait',

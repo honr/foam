@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'Bookmark',
   package: 'foam.lib.bookmarks',
 

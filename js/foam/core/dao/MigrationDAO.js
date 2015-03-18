@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'MigrationDAO',
   package: 'foam.core.dao',
   extendsModel: 'ProxyDAO',

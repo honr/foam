@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'MementoMgr',
   package: 'foam.apps.quickbug.ui',
   extendsModel: 'foam.memento.MementoMgr',

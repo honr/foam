@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   package: 'foam.demos.pong',
   name: 'Ball',
   extendsModel: 'foam.graphics.Circle',
@@ -29,7 +29,7 @@ CLASS({
 });
 
 
-CLASS({
+LOAD_CLASS({
   package: 'foam.demos.pong',
   name: 'Paddle',
   extendsModel: 'foam.graphics.Circle',
@@ -42,7 +42,7 @@ CLASS({
 });
 
 
-CLASS({
+LOAD_CLASS({
   package: 'foam.demos.pong',
   name: 'Pong',
   extendsModel: 'foam.ui.View',

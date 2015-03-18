@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'KeywordDAO',
   package: 'foam.core.dao',
 

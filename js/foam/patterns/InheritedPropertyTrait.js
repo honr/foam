@@ -16,7 +16,7 @@
  */
 
 
-CLASS({
+LOAD_CLASS({
   name: 'InheritedPropertyTrait',
   package: 'foam.patterns',
   

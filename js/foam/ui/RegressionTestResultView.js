@@ -16,7 +16,7 @@
  */
 
 
-CLASS({
+LOAD_CLASS({
   name: 'RegressionTestResultView',
   label: 'Regression Test Result View',
   documentation: 'Displays the output of a $$DOC{.ref:"RegressionTest"}, either master or live.',

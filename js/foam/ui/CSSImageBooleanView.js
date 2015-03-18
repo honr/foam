@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'CSSImageBooleanView',
 
   extendsModel: 'foam.ui.SimpleView',

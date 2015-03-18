@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'FeatureListLoaderTrait',
   package: 'foam.documentation',
   documentation: 'Trait loads the documentation of the given feature list.',

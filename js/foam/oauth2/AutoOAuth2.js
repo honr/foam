@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'AutoOAuth2',
   package: 'foam.oauth2',
   help: 'Registers an EasyOAuth2 model in the context based on the current environment.',

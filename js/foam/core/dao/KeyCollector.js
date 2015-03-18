@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'KeyCollector',
   package: 'foam.core.dao',
   help: "A sink that collects the keys of the objects it's given.",

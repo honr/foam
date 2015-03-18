@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   "model_": "Model",
   "package": "foam.core.dao",
   "name": "BlobSerializeDAO",

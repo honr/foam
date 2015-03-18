@@ -9,7 +9,7 @@
  *     http://www.apache.org/licenses/LICENSE-2.0
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'VirtualConsole',
   package: 'foam.flow',
   todo: 'This isn\'t a FLOW view. It should probably live somewhere else.',

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'ScrollGesture',
   package: 'foam.input.touch',
   extendsModel: 'foam.input.touch.Gesture',

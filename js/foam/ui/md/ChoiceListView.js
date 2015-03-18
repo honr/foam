@@ -9,7 +9,7 @@
  *     http://www.apache.org/licenses/LICENSE-2.0
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'ChoiceListView',
   package: 'foam.ui.md',
   extendsModel: 'foam.ui.ChoiceListView',

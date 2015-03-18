@@ -17,7 +17,7 @@
 
 
 
-CLASS({
+LOAD_CLASS({
   name: 'DocLinkDiagram',
   package: 'foam.documentation.diagram',
 

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'Audio',
   package: 'foam.navigator.types',
   extendsModel: 'foam.navigator.BasicFOAMlet',

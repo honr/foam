@@ -25,7 +25,7 @@
  * tombstones (if the # of rows is available), or a pacifier view while the
  * content is being fetched.
  */
-CLASS({
+LOAD_CLASS({
   name: 'ScrollView',
   package: 'foam.ui',
   extendsModel: 'foam.ui.AbstractDAOView',

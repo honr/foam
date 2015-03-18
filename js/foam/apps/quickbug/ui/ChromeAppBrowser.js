@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'ChromeAppBrowser',
   package: 'foam.apps.quickbug.ui',
 

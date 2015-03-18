@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-CLASS({
+LOAD_CLASS({
   package: 'foam.demos.graphics',
   name:  'LogoBackground',
   extendsModel: 'foam.graphics.CView',
@@ -78,7 +78,7 @@ CLASS({
 });
 
 
-CLASS({
+LOAD_CLASS({
   package: 'foam.demos.graphics',
   name:  'LogoForeground',
   extendsModel: 'foam.graphics.CView',
@@ -122,7 +122,7 @@ CLASS({
 });
 
 
-CLASS({
+LOAD_CLASS({
   package: 'foam.demos.graphics',
   name:  'Logo',
   extendsModel: 'foam.ui.View',

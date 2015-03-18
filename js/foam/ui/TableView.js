@@ -26,7 +26,7 @@
     repaint
 
 */
-CLASS({
+LOAD_CLASS({
   name: 'TableView',
   package: 'foam.ui',
   extendsModel: 'foam.ui.AbstractDAOView',

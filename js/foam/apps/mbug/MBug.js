@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   package: 'foam.apps.mbug',
   name: 'MBug',
   extendsModel: 'foam.ui.View',

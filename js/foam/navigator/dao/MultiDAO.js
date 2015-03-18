@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'MultiDAO',
   package: 'foam.navigator.dao',
   extendsModel: 'AbstractDAO',

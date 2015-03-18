@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   package: 'foam.ui.layout',
   name: 'ResponsiveView',
   extendsModel: 'foam.ui.View',

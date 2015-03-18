@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'EMailCitationView',
   package: 'com.google.mail',
   extendsModel: 'foam.ui.DetailView',

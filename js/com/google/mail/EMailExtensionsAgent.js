@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   "model_": "Model",
   "package": "com.google.mail",
   "name": "EMailExtensionsAgent",

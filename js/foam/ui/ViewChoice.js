@@ -16,7 +16,7 @@
  */
 
 // TODO: This should be replaced with a generic Choice.
-CLASS({
+LOAD_CLASS({
   name: 'ViewChoice',
   package: 'foam.ui',
   

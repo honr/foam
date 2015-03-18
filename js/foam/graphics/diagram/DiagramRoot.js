@@ -16,7 +16,7 @@
  */
 
 
-CLASS({
+LOAD_CLASS({
   name: 'DiagramRoot',
   package: 'foam.graphics.diagram',
   extendsModel: 'foam.graphics.CView',

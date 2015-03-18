@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'RestDAO',
   package: 'foam.core.dao',
   extendsModel: 'AbstractDAO',

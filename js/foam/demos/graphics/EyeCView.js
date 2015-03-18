@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   package: 'foam.demos.graphics',
   name:  'EyeCView',
   label: 'Eye',

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   package: 'foam.demos.physics',
   name: 'Bubbles',
   extendsModel: 'foam.graphics.CView',

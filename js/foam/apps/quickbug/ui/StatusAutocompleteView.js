@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'StatusAutocompleteView',
   package: 'foam.apps.quickbug.ui',
   extendsModel: 'foam.ui.AutocompleteView',

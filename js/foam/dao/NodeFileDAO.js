@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'NodeFileDAO',
   package: 'foam.dao',
   extendsModel: 'AbstractDAO',

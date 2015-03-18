@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   "model_": "Model",
   "name": "IssueCommentUpdate",
   "package": "foam.apps.quickbug.model.imported",

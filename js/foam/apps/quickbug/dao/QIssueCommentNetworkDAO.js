@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'QIssueCommentNetworkDAO',
   package: 'foam.apps.quickbug.dao',
   extendsModel: 'foam.core.dao.RestDAO',

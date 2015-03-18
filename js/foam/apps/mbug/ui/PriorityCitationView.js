@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'PriorityCitationView',
   package: 'foam.apps.mbug.ui',
   extendsModel: 'foam.apps.mbug.ui.PriorityView',

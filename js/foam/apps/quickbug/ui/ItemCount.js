@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'ItemCount',
   package: 'foam.apps.quickbug.ui',
   extendsModel: 'CountExpr',

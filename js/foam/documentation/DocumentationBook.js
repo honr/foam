@@ -17,7 +17,7 @@
 
 // TODO: refactor the documentation viewer so we just create instances of
 // DocumentationBook and not submodels.
-CLASS({
+LOAD_CLASS({
   name: 'DocumentationBook',
   package: 'foam.documentation',
   extendsModel: 'Documentation',

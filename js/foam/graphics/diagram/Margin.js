@@ -16,7 +16,7 @@
  */
 
  
-CLASS({
+LOAD_CLASS({
   name: 'Margin',
   package: 'foam.graphics.diagram',
   extendsModel: 'foam.graphics.Margin',

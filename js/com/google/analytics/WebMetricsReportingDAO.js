@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'WebMetricsReportingDAO',
   package: 'com.google.analytics',
   extendsModel: 'com.google.analytics.AbstractMetricsReportingDAO',

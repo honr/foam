@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   package: 'foam.graphics',
   name: 'LinearLayout',
   extendsModel: 'foam.graphics.CView',

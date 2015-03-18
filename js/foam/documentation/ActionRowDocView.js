@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'ActionRowDocView',
   package: 'foam.documentation',
   extendsModel: 'foam.documentation.DocFeatureView',

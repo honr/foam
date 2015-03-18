@@ -16,7 +16,7 @@
  */
 
 
-CLASS({
+LOAD_CLASS({
   name: 'MenuSeparator',
   extendsModel: 'foam.ui.StaticHTML',
   package: 'foam.ui',

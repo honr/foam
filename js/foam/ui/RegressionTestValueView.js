@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'RegressionTestValueView',
   extendsModel: 'foam.ui.TextFieldView',
   package: 'foam.ui',

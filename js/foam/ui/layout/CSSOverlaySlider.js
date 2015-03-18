@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   "package": "foam.ui.layout",
   "name": "CSSOverlaySlider",
   "extendsModel": "foam.ui.View",

@@ -16,7 +16,7 @@
  */
 
 
-CLASS({
+LOAD_CLASS({
   name: 'PopupView',
 
   extendsModel: 'foam.ui.SimpleView',

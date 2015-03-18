@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'SearchController',
   package: 'foam.navigator',
   extendsModel: 'foam.ui.View',

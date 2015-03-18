@@ -16,7 +16,7 @@
  */
 
 
-CLASS({
+LOAD_CLASS({
   name: 'JSView',
 
   extendsModel: 'foam.ui.TextFieldView',

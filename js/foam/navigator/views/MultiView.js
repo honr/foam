@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'MultiView',
   package: 'foam.navigator.views',
   extendsModel: 'foam.ui.View',

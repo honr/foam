@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'ContactGSnippet',
   package: 'foam.navigator.views',
   extendsModel: 'foam.navigator.views.GSnippet',

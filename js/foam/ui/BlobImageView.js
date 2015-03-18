@@ -16,7 +16,7 @@
  */
 
 
-CLASS({
+LOAD_CLASS({
   name: 'BlobImageView',
 
   extendsModel: 'foam.ui.View',

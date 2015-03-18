@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'Input',
   package: 'foam.ui.polymer.gen',
   documentation: function() {/*

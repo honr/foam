@@ -16,7 +16,7 @@
  */
 
 
-CLASS({
+LOAD_CLASS({
   name: 'LinkPoint',
   package: 'foam.graphics.diagram',
   //extendsModel: 'foam.graphics.Point', // screws up ids

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'OAuth2ChromeIdentity',
   package: 'foam.oauth2',
   extendsModel: 'foam.oauth2.OAuth2',

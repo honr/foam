@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'SharedStyles',
   package: 'foam.ui.md',
   templates: [

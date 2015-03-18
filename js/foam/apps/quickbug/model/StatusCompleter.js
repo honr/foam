@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-CLASS({
+LOAD_CLASS({
   name: 'StatusCompleter',
   package: 'foam.apps.quickbug.model',
   properties: [

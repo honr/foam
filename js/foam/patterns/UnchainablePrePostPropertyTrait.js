@@ -16,7 +16,7 @@
  */
 
 
-CLASS({
+LOAD_CLASS({
   name: 'UnchainablePrePostPropertyTrait',
   package: 'foam.patterns',
   

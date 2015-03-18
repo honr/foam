@@ -16,7 +16,7 @@
  */
 
 // TODO: Take auto-complete information from autocompleter in Property.
-CLASS({
+LOAD_CLASS({
   name: 'AutocompleteListView',
   package: 'foam.ui.md',
   extendsModel: 'foam.ui.BaseView',
