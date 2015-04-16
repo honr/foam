@@ -893,7 +893,53 @@ CLASS({
 
 CLASS({
   name: 'IPAddressProperty',
-  extendsModel: 'StringProperty'
+  extendsModel: 'StringProperty',
+  properties: [
+    {
+      name: 'ipVersion',
+      type: 'Int',
+      documentation: 'The version of the IP address which can be 4 or 6, for ' +
+          'ipv4 and ipv6, respectively.',
+      defaultValue: 4
+    },
+    {
+      name: 'privateRange',
+      documentation: 'Whether or not this IP address falls into the private ' +
+          'addresses range, according to rfc1918',
+      type: 'boolean',
+      defaultValue: false
+    }
+  ],
+  // Returns '' for valid and a non-empty error string for invalid.
+  validate: function(x) {
+    var parts = x.split('.');
+    if (this.ipVersion == 4) {
+      if (parts.length != 4) {
+        return 'Address must consist of 4 numbers each from 0 to 255';
+      }
+      for (var i = 0; i < 4; i++) {
+        var x = +parts[i];
+        if (('' + x) == parts[i] && 0 <= x && x <= 255) {
+          parts[i] = x;
+        } else { // NaNs are Also weeded out.
+          return 'Address must consist of 4 numbers each from 0 to 255';
+        }
+      }
+      if (!this.privateRange) {
+        return ''; // Valid.
+      }
+      if ((parts[0] == 10) ||
+          (parts[0] == 172 && (parts[1] & 240) == 16) ||
+          (parts[0] == 192 && parts[1] == 168)) {
+        return '';  // Valid.
+      }
+      return 'Address out of the private addresses range.';
+    } else if (this.ipVersion == 6) {
+      // Not implemented yet!
+    } else {
+      return 'Unknown IP address version.  Expected to be 4 or 6.';
+    }
+  }
 });
 
 CLASS({
