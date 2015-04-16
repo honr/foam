@@ -898,14 +898,18 @@ CLASS({
     {
       name: 'ipVersion',
       type: 'Int',
-      documentation: 'The version of the IP address which can be 4 or 6, for ' +
-          'ipv4 and ipv6, respectively.',
+      documentation: function() {/*
+          The version of the IP address which can be 4 or 6, for ipv4 and ipv6,
+          respectively.
+      */},
       defaultValue: 4
     },
     {
       name: 'privateRange',
-      documentation: 'Whether or not this IP address falls into the private ' +
-          'addresses range, according to rfc1918',
+      documentation: function() {/*
+          Whether or not this IP address falls into the private addresses range,
+          according to rfc1918.
+      */},
       type: 'boolean',
       defaultValue: false
     }
